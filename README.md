@@ -11,8 +11,8 @@ First clone this repository to your laptop. You must have Node (> v4) and [yarn]
 
 ```bash
 cd ~/code/<your_github_nickname>
-git clone git@github.com:caioertai/http-ajax-295.git http-ajax-lecture
-cd http-ajax-lecture
+git clone git@github.com:caioertai/js-plugins-batch-295.git js-plugins-lecture
+cd js-plugins-lecture
 rm -rf .git
 yarn install
 stt # Open this folder in Sublime Text
