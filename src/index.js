@@ -1,43 +1,18 @@
-const moviesList  = document.querySelector('#movies-list');
-const searchForm  = document.querySelector('#search-movies');
-const searchInput = document.querySelector('#keyword');
+// Plugin init imports
+// Similar to require_relative in Ruby, but with a little more involved.
+import { formSubmit, fetchMovies } from './movies';
+import { initSortable } from './plugins/init_sortable';
+import { initSwal } from './plugins/init_swal';
+import { initSelect2 } from './plugins/init_select2';
 
-// Build a movie HTML li tag when given a movie object (the one currently
-// coming from the OMBD API)
-const buildMovieTag = (movieObject) => {
-  return `
-    <li class='list-inline-item'>
-      <img src="${movieObject.Poster}" alt="${movieObject.Title}" />
-      <p>${movieObject.Title}</p>
-    </li>
-  `
-};
+// Plugin initializations
+initSortable();
+initSwal();
+initSelect2();
 
-// Defines the behaviour of the form
-const formSubmit = (event) => {
-  event.preventDefault();
-
-  const query = searchInput.value;
-  fetchMovies(query);
-};
-
-// Insert movie HTML tag in the page
-const insertMovieHTML = movie => moviesList.insertAdjacentHTML('beforeEnd', buildMovieTag(movie));
-
-// Fetches movies from OMDB when given a query (it will come from the user input
-// when the form is submited, or by the default value that we set when the page
-// loads)
-const fetchMovies = (query) => {
-  const queryURL = `http://www.omdbapi.com/?s=${query}&apikey=adf1f2d7`
-  fetch(queryURL)
-    .then(response => response.json())
-    .then((data) => {
-      const movies = data.Search;
-      moviesList.innerHTML = '';
-      movies.forEach(insertMovieHTML);
-    });
-};
-
-// Calling the functions to initialize the page
+// Bindings
+const searchForm = document.querySelector('#search-movies');
 searchForm.addEventListener('submit', formSubmit);
+
+// Ajax Calls
 fetchMovies('harry');

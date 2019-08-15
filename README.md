@@ -1,3 +1,10 @@
+<!-- #                   ruby            js
+# library           gems            packages
+# pack manager      bundler         yarn(*npm)
+# cmd to install    bundle install  yarn install
+# dependency file   Gemfile         package.json
+ -->
+
 ## Usage
 
 First clone this repository to your laptop. You must have Node (> v4) and [yarn](https://yarnpkg.com/lang/en/docs/install/) installed.

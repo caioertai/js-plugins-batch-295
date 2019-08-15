@@ -5,13 +5,52 @@
     <title>Playground - JavaScript 101</title>
     <link rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/select2/dist/css/select2.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container text-center">
+      <select class="select2" name="country">
+        <option value="AL">Alabama</option>
+        <option value="WY">Wyoming</option>
+        <option>Lorem</option>
+        <option>ipsum</option>
+        <option>dolor</option>
+        <option>sit</option>
+        <option>amet,</option>
+        <option>consectetur</option>
+        <option>adipisicing</option>
+        <option>elit.</option>
+        <option>Quam,</option>
+        <option>architecto</option>
+        <option>molestiae</option>
+        <option>ratione</option>
+        <option>reiciendis</option>
+        <option>consectetur</option>
+        <option>maxime</option>
+        <option>natus</option>
+        <option>inventore.</option>
+        <option>Cumque</option>
+        <option>ratione</option>
+        <option>blanditiis,</option>
+        <option>dolorum</option>
+        <option>fugiat</option>
+        <option>omnis</option>
+        <option>perferendis</option>
+        <option>sunt</option>
+        <option>minus</option>
+        <option>voluptatem</option>
+        <option>esse,</option>
+        <option>dignissimos</option>
+      </select>
+
       <form id="search-movies" class="form-inline">
         <input id="keyword" type="text" class="form-control ml-auto mr-2" placeholder="Find movies">
         <input type="submit" id="search-button" class="btn btn-primary mr-auto ml-2" value="Search">
       </form>
+      <br>
+      <div><button id="changes-button" class="btn btn-secondary">Submit changes</button></div>
+      <br>
       <ul id="movies-list" class="list-inline"></ul>
     </div>
 
